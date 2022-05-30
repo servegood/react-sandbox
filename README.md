@@ -4,6 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## What is the project about
 
-Advance React concepts
+Advanced React concepts
 
 ### `npm start`

@@ -1,9 +1,14 @@
-//import UseRefExample1 from './components/UseRefExample1'
-import UseRefExample2 from './components/UseRefExample2'
+import UseRefExampleSimpleGetSet from './components/UseRefExampleSimpleGetSet'
+import UseRefExamplePreviousState from './components/UseRefExamplePreviousState'
+import UseRefMemoryLeak from './components/UseRefMemoryLeak'
 function App() {
   return (
     <div className="container mt-5">
-      <UseRefExample2 />
+      <UseRefExampleSimpleGetSet />
+      <hr />
+      <UseRefExamplePreviousState />
+      <hr />
+      <UseRefMemoryLeak />
     </div>
   )
 }

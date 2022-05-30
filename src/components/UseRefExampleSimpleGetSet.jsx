@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-function UseRefExample1() {
+function UseRefExampleSimpleGetSet() {
   const inputRef = useRef()
   const paraRef = useRef()
 
@@ -17,6 +17,7 @@ function UseRefExample1() {
 
   return (
     <div>
+      <h1>UseRef - Simple Get Set Sample </h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="name">Name</label>
         <input
@@ -36,4 +37,4 @@ function UseRefExample1() {
   )
 }
 
-export default UseRefExample1
+export default UseRefExampleSimpleGetSet

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 
 //using useRef how to access previous state
-function UseRefExample2() {
+function UseRefExamplePreviousState() {
   const renders = useRef(1)
   const [name, setName] = useState('')
 
@@ -13,10 +13,10 @@ function UseRefExample2() {
   }, [name])
   return (
     <div>
-      <h2>Previous State Example</h2>
+      <h1>UseRef - Previous State Example</h1>
       <hr />
-      <h1>Renders: {renders.current}</h1>
-      <h1>Prev Name State: {prevName.current}</h1>
+      <h4>Renders: {renders.current}</h4>
+      <h4>Prev Name State: {prevName.current}</h4>
       <input
         type="text"
         value={name}
@@ -27,4 +27,4 @@ function UseRefExample2() {
   )
 }
 
-export default UseRefExample2
+export default UseRefExamplePreviousState

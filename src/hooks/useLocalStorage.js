@@ -1,14 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-//to make http request
-function useLocalStorage(url, options) {
-  const [task, setTask] = useState('')
+//to store to state and localstorage
+function useLocalStorage(key, initialValue) {
+  const [localStorageValue, setLocalStorageValue] = useState(() =>
+    getLocalStorage(key, initialValue)
+  )
 
-  useEffect(() => {
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const setValue = (value) => {
+    //check if function
+    const valueToStore =
+      value instanceof Function ? value(localStorageValue) : value
 
-  return { data, loading, error }
+    //set to State
+    setLocalStorageValue(value)
+
+    //set to local storage
+    localStorage.setItem(key, JSON.stringify(valueToStore))
+  }
+
+  return [localStorageValue, setValue]
+}
+
+function getLocalStorage(key, initialValue) {
+  const itemFromStorage = localStorage.getItem(key)
+  return itemFromStorage ? JSON.parse(itemFromStorage) : initialValue
 }
 
 export default useLocalStorage
